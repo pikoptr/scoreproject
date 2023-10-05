@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Scores</title>
+</head>
+<body>
+    <h1>Daftar Nilai Siswa</h1>
+        <ul>
+            {% for students in students %}
+                <li>
+                    Nama: {{ students['name'] }} - Nilai: {{ students['score'] }}
+                    {% if students['score'] > 90 %}
+                        - Congratulations
+                    {% elif students['score'] >= 76 %}
+                        - Very good
+                    {% else %}
+                        - Maaf, Anda belum lulus
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+</body>
+</html>
